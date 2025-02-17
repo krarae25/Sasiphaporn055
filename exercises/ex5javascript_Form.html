@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff; 
+            margin: 0;
+        }
+
+        #loginForm {
+            background-color: #ffffff; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 48%;
+            padding: 10px;
+            margin-right: 4%;
+            border: none;
+       
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let username = document.querySelector("#username").value;
+            let password = document.querySelector("#password").value;
+            let usernameError = document.querySelector("#usernameError");
+            let passwordError = document.querySelector("#passwordError");
+
+            usernameError.innerText = "";
+            passwordError.innerText = "";
+
+            let isValid = true;
+
+            if (username.length < 8) {
+                usernameError.innerText = "Username must be at least 8 characters.";
+                isValid = false;
+            }
+
+            if (password.trim() === "") {
+                passwordError.innerText = "Please enter your password.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Login Successful!");
+            }
+
+            return false; 
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("#loginForm").onsubmit = validateForm;
+        });
+    </script>
+</head>
+<body>
+
+    <form id="loginForm">
+        <h2>Login</h2>
+        <label>Username</label>
+        <input type="text" id="username">
+        <p id="usernameError"></p>
+
+        <label>Password</label>
+        <input type="password" id="password">
+        <p id="passwordError"></p>
+
+        <div style="display: flex; justify-content: space-between;">
+            <button type="submit">Login</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+</body>
+</html>

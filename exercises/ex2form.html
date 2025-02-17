@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+</head>
+<body>
+    <h1>แบบฟอร์มลงทะเบียนศิษย์เก่า IT+IS</h1>
+    <form action="https://example.com/" method="post">
+        <label for="fullName">ชื่อ-สกุล</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <br />
+        <label for="studentId">รหัสนักศึกษา</label>
+        <input type="text" id="studentId" name="studentId" required>
+
+        <br />
+        <label for="gender">เพศ</label>
+        <input type="radio" name="gender" value="male"/> ชาย
+        <input type="radio" name="gender" value="female"/> หญิง
+        <input type="radio" name="gender" value="other"/> อื่น ๆ
+
+        <br />
+        <label for="admissionYear">ปีการศึกษาเข้าศึกษา</label>
+        <input type="number" id="admissionYear" name="admissionYear" min="1900" max="2099" required>
+
+        <br />
+        <label for="address">ที่อยู่</label>
+        <textarea id="address" name="address" cols="30" rows="5" required></textarea>
+
+        <br />
+        <label for="email">อีเมลล์</label>
+        <input type="email" id="email" name="email" required>
+
+        <br />
+        <label for="phone">เบอร์โทรติดต่อ</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="ตัวอย่าง: 0812345678" required>
+
+        <br />
+        <label for="course">ชื่อหลักสูตร</label>
+        <select id="course" name="course" required>
+            <option value="">-- เลือกหลักสูตร --</option>
+            <option value="IT">IT</option>
+            <option value="IS">IS</option>
+        </select>
+
+        <br />
+        <label for="currentJob">อาชีพปัจจุบัน</label>
+        <input type="text" id="currentJob" name="currentJob" required>
+
+        <br />
+        <label for="workplace">สถานที่ทำงาน</label>
+        <textarea id="workplace" name="workplace" cols="30" rows="5" required></textarea>
+
+        <br />
+        <label for="jobType">ประเภทงาน</label>
+        <select id="jobType" name="jobType" required>
+            <option value="">-- เลือกประเภทงาน --</option>
+            <option value="Web Developer">Web Developer</option>
+            <option value="SA">SA</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+        </select>
+
+        <br />
+        <label for="photo">Upload รูปถ่าย</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <br />
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
+
